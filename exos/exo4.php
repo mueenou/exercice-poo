@@ -29,7 +29,32 @@ require_once '../inc/functions.php';
  *      echo $luigi->getLives(); // Display: 4
  */
 
+class Hero {
+    private $name;
+    private $lives = 3;
 
+    public function __construct($name) {
+        // var_dump($this, $first, $last);
+        $this->setName($name);
+        echo "instanciation !";
+    }
+    public function hello() {
+        return "It's me, ".$this->name."!";
+    }
+    public function setName($name) {
+        $this->name = $name;
+    }
+    public function getLives() {
+        return $this->lives;
+    }
+    public function takeHit() {
+        $this->lives--;
+    }
+    public function up() {
+        $this->lives++;
+    }
+
+}
 
 
 

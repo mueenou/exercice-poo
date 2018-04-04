@@ -20,6 +20,12 @@ require_once '../inc/functions.php';
  */
 
 
+class Mario {
+    private $lives = 3;
+    public function getLives() {
+        return $this->lives;
+    }
+}
 
 
 

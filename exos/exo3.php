@@ -36,6 +36,18 @@ require_once '../inc/functions.php';
  *      echo $mario->getLives(); // Display: 4
  */
 
+class Mario {
+    private $lives = 3;
+    public function getLives() {
+        return $this->lives;
+    }
+    public function takeHit() {
+        $this->lives--;
+    }
+    public function up() {
+        $this->lives++;
+    }
+}
 
 
 

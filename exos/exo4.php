@@ -34,12 +34,11 @@ class Hero {
     private $lives = 3;
 
     public function __construct($name) {
-        // var_dump($this, $first, $last);
         $this->setName($name);
         echo "instanciation !";
     }
     public function hello() {
-        return "It's me, ".$this->name."!";
+        return "It's me, $this->name!";
     }
     public function setName($name) {
         $this->name = $name;

@@ -16,10 +16,14 @@ class Hero {
     private $name;
     private $color;
     private $lives = 3;
+    private $mushroom;
+    private $big = false;
+    private $star = false;
 
     public function __construct($name, $color) {
         // var_dump($this, $first, $last);
         $this->setName($name);
+        $this->setColor($color);
         echo "instanciation !";
     }
     public function hello() {
@@ -31,16 +35,41 @@ class Hero {
     public function setColor($color) {
         $this->color = $color;
     }
+    public function getColor() {
+        return $this->color;
+    }
     public function getLives() {
         return $this->lives;
     }
     public function takeHit() {
-        $this->lives--;
+        if ($this->hasStar() === false) {
+            if ($this->isBig()) {
+                # code...
+                $this->big = false;
+            } else {
+                $this->lives--;
+            }
+        }
+        return $this->getLives();
     }
     public function up() {
         $this->lives++;
     }
-
+    public function eatMushroom() {
+        $this->big = true;
+    }
+    public function isBig() {
+        return $this->big;
+    }
+    public function receiveStar() {
+        $this->star = true;
+    }
+    public function hasStar() {
+        return $this->star;
+    }
+    public function vanishStar() {
+        $this->star = false;
+    }
 }
 
 
